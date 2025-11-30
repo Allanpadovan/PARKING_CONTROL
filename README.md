@@ -23,28 +23,29 @@ Estrutura do Projeto (PSR-4 e Camadas)
 
 A organização segue o padrão de camadas e o autoloading App\ via PSR-4:
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-Estrutura de Pastas 
-src/
-├── Application/              
-│   └── ParkingService.php
-├── Domain/                    
-│   ├── Entity/
-│   │   ├── Vehicle.php
-│   │   └── ParkingRecord.php
-│   ├── Interfaces/
-│   │   ├── PricingStrategyInterface.php
-│   │   └── ParkingRepositoryInterface.php
-│   └── Pricing/               → Strategy Pattern
-│       ├── BasePricingStrategy.php
-│       ├── CarPricingStrategy.php
-│       ├── BikePricingStrategy.php
-│       └── TruckPricingStrategy.php
-└── Infra/                     
-    ├── Database/
-    │   └── Connection.php
-    └── Repository/
-        └── SQLiteParkingRepository.php
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+PARKING_CONTROL/
+├── public/                  
+├── src/
+│   ├── Application/         
+│   │   └── ParkingService.php
+│   ├── Domain/              
+│   │   ├── Entity/         
+│   │   ├── Interfaces/      
+│   │   └── Pricing/         
+│   │       ├── BasePricingStrategy.php
+│   │       ├── CarPricingStrategy.php
+│   │       ├── BikePricingStrategy.php
+│   │       └── TruckPricingStrategy.php
+│   └── Infra/              
+│       ├── Database/        
+│       │   └── Connection.php
+│       └── Repository/     
+│           └── SQLiteParkingRepository.php
+├── database/              
+├── vendor/                  
+├── composer.json
+└── README.md
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 Requisitos para rodar o projeto:
 PHP versão 8.2 o gerenciador de dependências Composer
 Xamp Instalado na maquina e estar com o Apache Start
