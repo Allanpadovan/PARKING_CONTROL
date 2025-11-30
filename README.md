@@ -24,25 +24,32 @@ Estrutura do Projeto (PSR-4 e Camadas)
 A organização segue o padrão de camadas e o autoloading App\ via PSR-4:
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 PARKING_CONTROL/
-├── public/                  
+```text
+PARKING_CONTROL/
+├── public/
+│   └── index.php
 ├── src/
-│   ├── Application/         
+│   ├── Application/
 │   │   └── ParkingService.php
-│   ├── Domain/              
-│   │   ├── Entity/         
-│   │   ├── Interfaces/      
-│   │   └── Pricing/         
+│   ├── Domain/
+│   │   ├── Entity/
+│   │   │   ├── Vehicle.php
+│   │   │   └── ParkingRecord.php
+│   │   ├── Interfaces/
+│   │   │   ├── PricingStrategyInterface.php
+│   │   │   └── ParkingRepositoryInterface.php
+│   │   └── Pricing/
 │   │       ├── BasePricingStrategy.php
 │   │       ├── CarPricingStrategy.php
 │   │       ├── BikePricingStrategy.php
 │   │       └── TruckPricingStrategy.php
-│   └── Infra/              
-│       ├── Database/        
+│   └── Infra/
+│       ├── Database/
 │       │   └── Connection.php
-│       └── Repository/     
+│       └── Repository/
 │           └── SQLiteParkingRepository.php
-├── database/              
-├── vendor/                  
+├── database/                
+├── vendor/                 
 ├── composer.json
 └── README.md
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
