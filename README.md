@@ -25,14 +25,25 @@ A organização segue o padrão de camadas e o autoloading App\ via PSR-4:
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 Estrutura de Pastas 
 src/
-├── Application/     → Casos de uso e orquestração (ParkingService)
-├── Domain/          → Regras de negócio, entidades e interfaces
-│   ├── Entity/      → Vehicle, ParkingRecord
-│   ├── Interfaces/  → PricingStrategyInterface, ParkingRepositoryInterface
-│   └── Pricing/     → Estratégias de preço (Strategy Pattern)
-└── Infra/           → Implementações concretas
-├── Database/    → Conexão SQLite
-└── Repository/  → SQLiteParkingRepository
+├── Application/              
+│   └── ParkingService.php
+├── Domain/                    
+│   ├── Entity/
+│   │   ├── Vehicle.php
+│   │   └── ParkingRecord.php
+│   ├── Interfaces/
+│   │   ├── PricingStrategyInterface.php
+│   │   └── ParkingRepositoryInterface.php
+│   └── Pricing/               → Strategy Pattern
+│       ├── BasePricingStrategy.php
+│       ├── CarPricingStrategy.php
+│       ├── BikePricingStrategy.php
+│       └── TruckPricingStrategy.php
+└── Infra/                     
+    ├── Database/
+    │   └── Connection.php
+    └── Repository/
+        └── SQLiteParkingRepository.php
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 Requisitos para rodar o projeto:
 PHP versão 8.2 o gerenciador de dependências Composer
